@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@300..1000&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="tasks.png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Recursive", sans-serif;
+            font-optical-sizing: auto;
+            background: antiquewhite;
+            color: black;
+        }
+    
+        .container {            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 100px);
+            margin-bottom: 50px;
+        }
+    
+        .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: 1px solid white;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80%;
+            margin: 10px auto;
+            background-color: rgb(226 ,190 ,142);
+            color: black;
+        }
+    
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            font-size: 16px;
+            padding: 15px;
+            border-radius: 5px;
+            color: black;
+            background-color: rgb(226 ,190 ,142);
+            border: 1px solid #fafafa;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            position: relative;
+        }
+    
+        .eye-icon {
+            position: absolute;
+            right: 20px; /* Adjust as needed */
+            top: 48%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            height: 30px; /* Set the height */
+            width: 30px; /
+    }
+    
+    #password {
+    padding-right: 40px; 
+    }
+    
+        #password {
+            padding-right: 30px;
+        }
+    
+        button[type='submit'] {
+            width: 100%;
+            padding: 15px;
+            margin-top: 20px;
+            border: none;
+            background-color:rgb(226 ,190 ,142);
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border-radius: 30px;
+            color: black;
+        }
+    
+        button:hover {
+            background-color:rgb(201, 146, 75) ;
+        }
+    
+        hr {
+            width: 80%;
+            border: none;
+            border-top: 2px solid #292929;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+    
+        p {
+            margin: 0;
+            text-align: center;
+            color: #6a6a6a;
+        }
+    
+        a {
+            color: rgb(201, 146, 75);
+            text-decoration: none;
+        }
+    
+        
+    
+        form {
+            text-align: left;
+            padding: 10px;
+            margin: 10px;
+            line-height: 40px;
+            font-weight: bold;
+            width: 80%;
+            margin: 0 auto;
+            position: relative;
+        }
+    
+        footer {
+            text-align: center;
+            padding: 32px;
+            color: black;
+            font-size: x-small;
+            background-color: rgb(226 ,190 ,142);
+            bottom: 0;
+            width: 100%;
+        }
+    
+        .login-box {
+            background-image: rgb(226 ,190 ,142);
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            width: 400px;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            max-width: 90%;
+        }
+    
+        .login-box h1 {
+            margin-bottom: 50px;
+        }
+    
+        .fb-btn img,
+        .apple-btn img,
+        .google-btn img {
+            width: 15px;
+            height: 15px;
+            margin-right: 10px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    
+        .fb-btn span,
+        .apple-btn span,
+        .google-btn span {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    
+        .apple-btn img {
+            margin-left: -5px;
+        }
+    
+        
+    
+        @media screen and (max-width: 768px) {
+            .container {
+                margin-bottom: 20px;
+            }
+    
+            .login-box {
+                width: 90%;
+            }
+        }
+    
+        @media screen and (max-width: 480px) {
+            .navbar {
+                font-size: 20px;
+                padding: 5px 10px;
+            }
+    
+            .navbar img {
+                width: 30px;
+                margin-right: 5px;
+            }
+    
+            .btn {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+    
+            .login-box {
+                padding: 20px;
+            }
+    
+            input[type="text"],
+            input[type="password"] {
+                font-size: 14px;
+                padding: 10px;
+            }
+    
+            button[type='submit'] {
+                padding: 12px;
+                font-size: 14px;
+            }
+    
+            hr {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+    
+            p {
+                font-size: 12px;
+            }
+    
+            footer {
+                padding: 16px;
+                font-size: x-small;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <!-- Login form -->
+            <h1>Log in </h1>
+            <a href="#"><button class="btn fb-btn"><img src="facebook.png" alt="Facebook Logo">Continue with Facebook</button></a>
+            <a href="#"><button class="btn google-btn"><img src="google.png" alt="Google Logo">Continue with Google</button></a>
+            <hr>
+            <form id="loginForm" action="#">
+                Email or username <br>
+                <input type="text" placeholder="Username" id="username" required><br>
+                Password <br>
+                <div class="password-container">
+                    <input type="password" id="password" required name="password" placeholder="Password" autocomplete="new-password">
+                    <img src="eyes.png" class="eye-icon" onclick="togglePasswordVisibility()">
+                </div>
+                <br>
+                <button type="submit" onclick="saveData()"><b>Log in</b></button><br>
+                <div style="text-align: center;">
+                    <a href="#" style="color: black;  text-decoration: none;">Forgot Password?</a>
+                </div>
+            </form>
+            <hr>
+            <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+        </div>
+    </div>
+
+    <footer>
+        This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+    </footer>
+
+    <script>
+        // Function to toggle password visibility
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById("password");
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+            } else {
+                passwordInput.type = "password";
+            }
+        }
+
+        // Function to save user data to local storage
+        function saveData(username, password) {
+            let user_records = JSON.parse(localStorage.getItem("users")) || [];
+            if (user_records.some(v => v.username === username)) {
+                alert("Username already exists!");
+            } else {
+                user_records.push({ username: username, password: password });
+                localStorage.setItem("users", JSON.stringify(user_records));
+            }
+        }
+
+        // Function to redirect to the home page
+        function redirectToHomePage() {
+            window.location.href = "home.html";
+        }
+
+        // Add event listener to the login form
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get the entered username and password
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Save user data to local storage
+            saveData(username, password);
+
+            // Redirect to home page
+            redirectToHomePage();
+        });
+    </script>
+</body>
+</html>

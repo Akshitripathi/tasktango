@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" type="image/x-icon" href="tasks.png">
+    <title> Task Tango</title>
+
+    <style>
+            
+@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@300..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+:root {
+  --primary-color: #f3eae5;
+  --text-dark: #262229;
+  --white: #ffffff;
+  --max-width: 1200px;
+}
+
+body{
+    background-color: antiquewhite;
+      font-family: "Recursive", sans-serif;
+      font-optical-sizing: auto;
+      font-style: normal;
+      font-variation-settings:
+        "slnt" 0,
+        "CASL" 0,
+        "CRSV" 0.5,
+        "MONO" 0;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.btn {
+  outline: none;
+  border: none;
+  transition: 0.3s;
+  cursor: pointer;
+  background-color: #6b4e7d;
+}
+
+img {
+  display: flex;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav {
+  position: fixed;
+  isolation: isolate;
+  width: 100%;
+  height: 110px;
+  z-index: 9;
+}
+
+.nav__header {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: antiquewhite;
+}
+.nav__header a{
+  font-weight: bolder;
+          font-size: 25px; 
+          color:black;
+}
+
+.nav__logo a {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.nav__links{
+  position:inherit;
+  top: 2rem;
+  width: 100%;
+  padding:4rem;
+  list-style: none;
+  display: flex;
+  align-items: right;
+  justify-content: center;
+  font-size: 2rem;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+
+.container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 0;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  gap: 2rem;
+  overflow: hidden;
+}
+
+.container__left {
+  padding-inline: 1rem;
+  text-align: center;
+}
+
+.container__left h1 {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  margin-left: 3rem;
+  margin-bottom: 2rem;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 4.5rem;
+  color: var(--text-dark);
+}
+
+.container__left .btn {
+  margin-left: 3rem;
+  padding: 1rem 2rem;
+  letter-spacing: 2px;
+  color: var(--white);
+  background-color: var(--text-dark);
+  border-radius: 5rem;
+}
+
+.container__left .btn:hover {
+  color: var(--text-dark);
+  background-color:var(--primary-color);
+}
+
+.container__right {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  gap: 2rem;
+}
+
+.container__right::before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  transform-origin: left;
+  height: 80%;
+  background-color: rgb(226 ,190 ,142);
+  border-radius: 1rem;
+  z-index: -1;
+
+  animation: show 0.75s 1.25s ease-in-out forwards;
+}
+
+@keyframes show {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: calc(100% - 2rem);
+  }
+}
+
+
+
+.tent-1 {
+  max-width: 180px;
+  transform: translateX(-1rem);
+  border-radius: 1rem;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.content {
+  padding-block: 0 5rem;
+  padding-inline: 2rem;
+  text-align: center;
+}
+
+.content h4 {
+  
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.content h2 {
+  
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--text-dark);
+}
+
+.content h3 {
+  
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+
+.content p {
+  font-family: "Cedarville Cursive", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 1.75rem;
+  color: var(--text-dark);
+}
+
+.socials {
+  position: absolute;
+  bottom: 1rem;
+  /* right: 1rem; */
+  display:block;
+  align-items: center;
+  gap: 10px;
+  font-size: 2.5rem;
+}
+
+.socials a {
+  padding-inline: 8rem;
+  font-size: 1.25rem;
+  color: var(--text-dark);
+}
+
+
+@media screen and (width<600px) {
+  .nav__header{
+    padding: 0;
+  }
+  .socials, .socials a{
+    font-size: 0.7rem;
+  }
+}
+@media screen and (width<768px) {
+  .nav__header{
+    padding: 0;
+    height: 8rem;
+  }
+  .socials, .socials a{
+    font-size: 1.5rem;
+    padding-inline: 1rem;;
+  }
+}
+@media screen and (min-width: 768px) {
+  nav {
+    position: static;
+    padding: 2rem 1rem;
+    max-width: var(--max-width);
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .nav__header {
+    flex: 1;
+    padding: 0;
+    background-color: transparent;
+  }
+  .nav__links a{
+    font-size: 30px;
+  }
+
+  .nav__menu__btn {
+    display: none;
+  }
+
+  .nav__btns {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nav__btns .btn {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    background-color: transparent;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    align-items: center;
+  }
+
+  .container__left {
+    text-align: left;
+  }
+  
+  
+  .socials , .socials a{
+    padding: 0;
+    bottom: 0rem;
+    padding-inline :3rem;;
+    font-size: 1.5rem;
+  }
+}
+
+@media (width>1024px) {
+  
+  .container{
+   display: grid;}
+  .container__right {
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+  }
+
+  .container__right::before {
+    bottom: unset;
+    top: 0;
+    height: 90%;
+  }
+  .tent-1 {
+    width: calc(100% + 10rem);
+    max-width: 125px;
+    transform: translate(-2rem, 2rem);
+  }
+
+  
+  .content {
+    padding-block: 5rem;
+    text-align: left;
+    max-width: 400px;
+    margin-inline-start: unset;
+  }
+  .socials{
+    position: absolute;
+    padding-inline: 6rem;
+    font-size: 2rem;
+  }
+}
+
+    </style>
+
+
+  </head>
+  <body>
+    <nav>
+      <div class="nav__header">
+        <div class="nav__logo">
+        
+          <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+          <dotlottie-player src="https://lottie.host/e1331f1b-cb0b-453f-b3ca-b03eb8d0ed04/WVP3spaEy6.json" background="transparent" speed="1" style="width: 70px; height: 70px;" loop autoplay></dotlottie-player>
+        
+        </div>
+        
+      <a>Task Tango</a>
+      <div class="nav__links" id="nav-links">
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="contact.html">Contact Us</a>
+      </div>      
+    </div>
+    </nav>
+    <div class="container">
+      
+      <div class="container__left">
+        <h1>Plan Easily</h1>
+        <div class="container__btn">
+          <a href="login.html"><button class="btn">LOGIN</button></a>
+        </div>
+      </div>
+      <div class="container__right">
+        <div class="images">
+          <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+          <dotlottie-player src="https://lottie.host/98397513-a0f3-4941-841f-80fde5a0378c/Apiy3EIDOo.json" background="transparent" speed="1" style="width: 300px; height: 300px; padding-left: 4rem;" loop autoplay></dotlottie-player>
+                
+          <!-- <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+          <dotlottie-player src="https://lottie.host/5a6036bd-0e63-486d-b322-a35a07ab9f43/ZAq6d4A8iO.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop autoplay></dotlottie-player> -->
+        
+        </div>
+        <div class="content">
+          <h4>Glide Through</h4>
+          <h2>Your</h2>
+          <h3>Checklist With Grace</h3>
+          <p>
+            Crafted for those who value simplicity and productivity, our to-do list tools 
+            offers streamlined functionality without overwhelming features. 
+            Stay focused, stay organized, and accomplish more with ease
+          </p>
+        </div>
+      </div>
+      <div class="socials">
+        <a><i class='bx bx-copyright' ></i>opyright</a>
+        <a><i class='bx bx-world'></i>   Language </a>
+        <span><i class='bx bxl-instagram'></i></span>
+        <span><i class='bx bxl-facebook-circle'></i></span>
+        <span><i class='bx bxl-twitter'></i></span>
+        <span><i class='bx bxl-youtube' ></i></span>
+        <span><i class='bx bxl-linkedin' ></i></span>
+        <span><i class='bx bxl-github' ></i></span>
+      </div>
+    </div>
+    </body>
+</html>

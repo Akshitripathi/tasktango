@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="tasks.png">
+    <title>To-Do List Features</title>
+    <style>
+        /* styles.css */
+        @import url('https://fonts.googleapis.com/css2?family=Recursive:wght@300..1000&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+body {
+    background-color: antiquewhite;
+      font-family: "Recursive", sans-serif;
+      font-optical-sizing: auto;
+      font-style: normal;
+      font-variation-settings:
+        "slnt" 0,
+        "CASL" 0,
+        "CRSV" 0.5,
+        "MONO" 0;
+      animation: fadeIn 1s ease-in-out;
+}
+
+header {
+    background-color: rgb(235, 194, 140);
+    color: black;
+    text-align: center;
+    padding: 20px 0;
+    animation: slideInDown 1s ease-in-out;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.feature {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 45%;
+    animation: slideInLeft 1s ease-in-out;
+}
+
+h2 {
+    color: rgb(116, 76, 23);
+    animation: fadeIn 1s ease-in-out;
+}
+
+footer {
+    background-color: rgb(235, 194, 140);
+    color: black;
+    text-align: center;
+    padding: 10px 0;
+    animation: slideInUp 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideInDown {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes slideInUp {
+    0% { transform: translateY(100%); }
+    100% { transform: translateY(0); }
+}
+
+
+
+.rotate {
+    animation: rotate 2s infinite;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.bounce {
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>To-Do List Features</h1>
+    </header>
+    <main>
+        <section class="feature">
+            <h2 class="pulse">Task Management</h2>
+            <p class="bounce">Easily add, delete, and update tasks on your to-do list.</p>
+        </section>
+        <section class="feature">
+            <h2 class="pulse">Interactive design</h2>
+            <p class="bounce">Helps you to easily view what work are you left with using emojis.</p>
+        </section>
+        <section class="feature">
+            <h2 class="pulse">Due Dates</h2>
+            <p class="bounce">Add due dates to tasks to prioritize your work and meet deadlines.</p>
+        </section>
+        <section class="feature">
+            <h2 class="pulse">Categories</h2>
+            <p class="bounce">Organize tasks into categories for better management and clarity.</p>
+        </section>
+        
+    </main>
+    <footer>
+        <p>&copy; 2024 Your To-Do List</p>
+    </footer>
+</body>
+</html>

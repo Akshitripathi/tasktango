@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="icon" type="image/x-icon" href="tasks.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Recursive:wght@300..1000&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color:  rgb(226 ,190 ,142);
+            font-family: "Recursive", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: <weight>;
+            font-style: normal;
+            font-variation-settings:
+                "slnt" 0,
+                "CASL" 0,
+                "CRSV" 0.5,
+                "MONO" 0;
+        }
+        .sign-up-form{
+            width: 300px;
+            box-shadow: inset;
+            background:  rgb(225, 168, 93) ;
+            padding: 20px;
+            margin: 8% auto 0;
+            text-align: center;
+        }
+        .sign-up-form h1{
+            color:black;
+            margin-bottom: 30px;
+        }
+        .input-box{
+            border-radius: 20px;
+            padding: 10px;
+            margin: 10px 0;
+            width: 80%;
+            border: 1px solid #999;
+            outline: none;
+        }
+        button{
+            color: black;
+            width: 80%;
+            padding: 10px;
+            border-radius: 20px;
+            font-size: 15px;
+            margin: 10px 0;
+            border: none;
+            outline: none;
+            cursor: pointer;
+
+        }
+        .signup-btn{
+            background-color:  rgba(17, 15, 15, 0.79);
+            color: black;
+        }
+        hr{
+            margin-top: 5px;
+            
+        }
+        .or{
+            background: #fff;
+            width: 30px;
+            margin: -19px auto 10px;
+        }
+
+        .sign-btn{
+            justify-content: space-between;
+        }
+        .phn{
+            color: black
+            text-decoration: none;
+        }
+
+        a{
+            text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+    .sign-up-form {
+        width: 80%;
+        margin-top: 20%;
+    }
+
+    .input-box {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+    </style>
+    
+</head>
+<body>
+   <div class="sign-up-form">
+    <h1>Sign Up to start listing!!</h1>
+    <form>
+        
+        <input type="email" class="input-box" placeholder=" Enter Your Email here"><br> 
+        <a href="#" class="phn" >Use phone number instead</a>
+        <p><span style="color: white;"><input type="checkbox" required></span> <span style="color: beige;">I agree to the term of services</span></p>
+        <div>
+            <a href="login.html" style="color:black;">SignUp</a>
+        </div>
+        <br><br>
+        <hr>
+        <p class="or">OR</p>
+        <div>
+            <button type="button" class="sign-btn">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+                <span class="signUpbtn" style="padding-left: 10px;">SignUp using Facebook</span>
+            </button>
+          </div>
+          
+          <div>
+            <button type="button" class="sign-btn">
+                <i class="fa fa-google" aria-hidden="true"> </i>
+                <span class="signUpbtn" style="padding-left: 10px;">SignUp using Google</span>
+            </button>
+          </div>
+    
+           
+        <p><span style="color:black;">Do you have an account?</span> <a href="./login.html" style="color: black;">Sign in</a> </p>
+    </form>
+</div>
+
+</body>
+
+</html>

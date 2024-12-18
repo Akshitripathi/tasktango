@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@300..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+
+html {
+  font-size: 20px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  /* width: 100px; */
+  height: 100vh;
+  background-image: url(6.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* font-family: "Recursive", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal; */
+  
+}
+
+
+.center {
+  width: 100%;
+  height: 112%;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  margin-left:230px;
+  align-items:center;
+  flex-direction: column;
+}
+
+.book {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  perspective: 2000px;
+}
+
+.image{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 400px;
+  left: -350px; /* Position the text to the left of the book */
+  width: 320px; /* Adjust as needed */
+  /* padding: 20px; */
+  background-color: rgba(248, 248, 248, 0.1); /* Placeholder color */
+  font-family: Arial, sans-serif; /* Font family for the text */
+}
+
+
+.pages {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.page {
+  width: 420px;
+  height: 400px;
+  position: absolute;
+  top: 0;
+  left: 50%; /* Center the book horizontally */
+  margin-left: -250px; /* Half of the width to center it */
+  border-radius: 7mm;
+  transform-style: preserve-3d;
+  transform-origin: center left; /* Change the transform origin */
+  transition: 0.25s;
+  box-shadow: 1px 2px 0 0 rgba(0, 0, 0, 0.15),
+    1px 3px 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+
+.page-side {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  flex-direction: column;
+  font-family: poppins;
+  border-radius: 7mm;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+}
+
+.list {
+  margin-top: 20px;
+  padding: 0;
+  list-style-type: none;
+  font-family: "Recursive", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.list h1{
+   margin-bottom: 30px;
+   
+}
+
+.list li {
+  margin-bottom: 10px;
+  
+}
+
+.list li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.list li a:hover {
+  background-color: #f1f1f1;
+}
+
+.front {
+  background: #d5c6a2;
+  color: rgb(40, 40, 40);
+  padding-left: 40px;
+}
+
+.back {
+  background: #d5c6a2;
+  color: white;
+  padding-right: 40px;
+  transform: rotateY(180deg);
+  font-family: "Recursive", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+        "slnt" 0,
+        "CASL" 0,
+        "CRSV" 0.5,
+        "MONO" 0;
+}
+
+.beads {
+  position: absolute;
+  top: 0;
+  left: -12px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  z-index: 9999;
+}
+
+.bead {
+  width: 36px;
+  height: 12px;
+  background: white;
+  border-radius: 5mm;
+  z-index: 9999;
+  box-shadow: inset 1px 2px 0 0 rgba(0, 0, 0, 0.15),
+    inset 1px 3px 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.controls {
+  width: 400px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.controls button {
+  background: white;
+  width: 40px;
+  height: 40px;
+  border: 0.4mm solid rgb(40, 40, 40);
+  border-radius: 50%;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+:root {
+  --container-height: 600px;
+  --contaier-width: 400px;
+  --header-height: 50px;
+}
+
+.container {
+  background-color: antiquewhite;
+  width: var(--contaier-width);
+  height: var(--container-height);
+  font-family: "Recursive", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  position: relative;
+  overflow-y:auto ;
+}
+header {
+  width: 100%;
+  height: var(--header-height);
+  background-image: url('./img/bg.jpg');
+  background-size: cover;
+  border-radius: 5px 5px 0 0;
+}
+.header {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #201313;
+}
+.new-todo {
+  width: 100%;
+  height: 50px;
+  padding: 0.25rem 0;
+}
+.new-todo form {
+  display: flex;
+  align-items: center;
+}
+.new-todo form input {
+  flex: 1;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  border-right: 0px;
+  outline: transparent;
+  padding-left: 0.5rem;
+  font-size: 1rem;
+  color: #0d0202;
+}
+
+/* Add this CSS for the calendar icon
+.bi-calendar {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: #555;
+  pointer-events: none;
+} */
+
+.new-todo form button {
+  width: 60px;
+  height: 40px;
+  font-size: 1rem;
+  background-color: transparent;
+  color: rgba(255, 38, 0, 0.651);
+  border: none;
+  border-left: 0px;
+  cursor: pointer;
+}
+.new-todo form button:hover {
+  text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.8);
+}
+
+.todos-list {
+  height: calc(var(--container-height) - var(--header-height));
+  background-color: #fff;
+  padding: 0.5rem;
+  border: 1px solid rgb(219, 219, 219);
+  overflow-y: auto;
+  border-radius: 0 0 5px 5px;
+}
+
+.todos-list .todo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #ccc;
+  height: 20px;
+}
+
+.todos-list .todo:last-child {
+  border-bottom: none;
+}
+
+.todos-list .todo * {
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+.todos-list .todo i {
+  font-size: 0.9rem;
+}
+
+.todos-list .todo p {
+  flex: 1;
+  word-break: break-all;
+}
+
+.checked {
+  text-decoration: line-through;
+  color: grey;
+}
+
+.todos-list .todo .bi-pencil-square {
+  color: rgb(31, 177, 48);
+}
+
+.todos-list .todo .bi-trash {
+  color: rgb(236, 82, 82);
+}
+
+.notification {
+  position: absolute;
+
+  width: calc(3 * var(--contaier-width) / 4);
+  height: 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0.9;
+
+  border-radius: 8px;
+  background-color: rgb(233, 81, 81);
+  top: 10px;
+  right: calc(-3 * var(--contaier-width) / 4);
+
+  color: #fff;
+
+  transition: 300ms right ease-in-out;
+}
+
+.notif-enter{
+  right:10px;
+
+}

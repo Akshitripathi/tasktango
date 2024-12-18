@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Recursive:wght@300..1000&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@300..1000&display=swap" rel="stylesheet">
+    <title>Contact Us</title>
+    <link rel="icon" type="image/x-icon" href="tasks.png">
+    <style>
+        body {
+            font-family: "Recursive", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: normal;
+            margin: 0;
+            padding: 0;
+            background-color: antiquewhite;
+        }
+        
+        header {
+            background-color: rgb(223, 182, 129);
+            color: black;
+            text-align: center;
+            padding: 20px 0;
+            font-family: 'Cedarville Cursive';
+            font-style: normal;
+            font-weight: bold;
+            font-display: swap;
+        }
+        
+        main {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        
+        .contact-info, .contact-form {
+            width: 45%;
+        }
+        
+        .contact-info {
+            border-right: 2px solid #ccc;
+            padding-right: 20px;   
+        }
+                
+        
+        .contact-form {
+            padding-left: 20px;
+        }
+        
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .contact-form label, .contact-form textarea, .contact-form input[type="email"], .contact-form input[type="text"] {
+            margin-bottom: 10px;
+        }
+        
+        .contact-form textarea {
+            resize: none;
+            height: 150px;
+        }
+        
+        button[type="submit"] {
+            background-color: antiquewhite;
+            color:black;
+            font-weight: bolder;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button[type="submit"]:hover {
+            background-color: rgb(223, 182, 129);
+        }
+        #message-sent { 
+            background-color: rgb(223, 182, 129); 
+            padding: 20px; 
+            border-radius: 5px; 
+            margin-top: 20px; }
+        
+        footer {
+            background-color: antiquewhite;
+            color: black;
+            font-weight: bolder;
+            text-align: center;
+            padding: 10px 0;
+        }
+        @media screen and (max-width: 768px) {
+            main {
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            .contact-info, .contact-form {
+                width: 90%;
+                margin-bottom: 20px;
+                border: none;
+                padding: 0;
+            }
+        
+            .contact-info {
+                border-right: none;
+            }
+        
+            .contact-form {
+                padding-left: 0;
+            }
+        
+            .contact-form form {
+                width: 100%;
+            }
+        
+            .contact-form label, .contact-form textarea, .contact-form input[type="email"], .contact-form input[type="text"] {
+                width: 100%;
+            }
+        
+            .contact-form textarea {
+                height: 100px;
+            }
+        }
+        
+    </style>
+
+
+</head>
+<body>
+
+<header>
+    <h1>Contact Us</h1>
+</header>
+
+<main>
+    <section class="contact-info">
+        <h2>Contact Information</h2>
+        <p>Email: mani.akshi1804@gmail.com</p>
+        <p>Phone: +91 7262639107</p>
+        <p>Address: Chitkara University, Rajpura, Punjab</p>
+    </section>
+
+    <section class="contact-form">
+        <h2>Send us a Message</h2>
+        <form method="get">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+            
+        </form>
+        <div id="message-sent" style="display:none;">
+            <p>Your message has been sent!</p>
+          </div>
+        </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Task Tango</p>
+</footer>
+<script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        document.getElementById('message-sent').style.display = 'block';
+        
+        setTimeout(function() {
+            document.querySelector('form').reset();
+            window.location.href = "index.html";
+        }, 3000); 
+    });
+</script>
+
+</body>
+</html>
